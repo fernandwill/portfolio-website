@@ -55,5 +55,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-// Unicorn behavior removed
