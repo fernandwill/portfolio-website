@@ -54,4 +54,24 @@ document.addEventListener("DOMContentLoaded", () => {
             gradientText.style.backgroundImage = `linear-gradient(${angle + 90}deg, #22c55e, #ec4899, #3b82f6)`;
         });
     }
+
+    // Toggle projects visibility
+    const toggleButton = document.getElementById("toggle-projects");
+    const hiddenProjects = document.querySelectorAll(".hidden-project");
+    
+    if (toggleButton) {
+        toggleButton.addEventListener("click", () => {
+            // Toggle visibility of hidden projects
+            hiddenProjects.forEach(project => {
+                project.classList.toggle("hidden");
+            });
+            
+            // Update button text
+            if (toggleButton.textContent === "Show More Projects") {
+                toggleButton.textContent = "Show Less Projects";
+            } else {
+                toggleButton.textContent = "Show More Projects";
+            }
+        });
+    }
 });

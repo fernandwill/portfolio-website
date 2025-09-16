@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fernand William Citra</title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -62,6 +62,10 @@
         background-position: 0% 50%;
         animation: gradient 5s ease-in-out infinite;
     }
+    
+    .hidden {
+      display: none;
+    }
 
   </style>
 </head>
@@ -74,8 +78,7 @@
             style="background-image: linear-gradient(90deg, #22c55e, #ec4899, #3b82f6); background-size: 200% 200%;">
             Fernand William Citra
           </span></h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-6 animate-fade-in-up animation-delay-300">Aspiring PERN Fullstack Developer</p>
-        <p class="text-xl md:text-2xl text-gray-300 mb-6 animate-fade-in-up animation-delay-300">Context Engineer</p>
+        <p class="text-xl md:text-2xl text-gray-300 mb-6 animate-fade-in-up animation-delay-300">Aspiring Fullstack Developer</p>
         <p class="text-lg text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">You can find me in:</p>
 
         <div class="flex justify-center items-center space-x-4 mb-8 animate-fade-in-up animation-delay-600">
@@ -117,41 +120,40 @@
             </p>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
             <!-- Frontend -->
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-html5-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">HTML5</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-css3-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">CSS3</p>
-            </div>
             <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
               <i class="devicon-javascript-plain colored text-5xl"></i>
               <p class="text-sm text-gray-300">JavaScript</p>
+            </div>
+            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
+              <i class="devicon-typescript-plain colored text-5xl"></i>
+              <p class="text-sm text-gray-300">TypeScript</p>
+            </div>
+            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
+              <i class="devicon-nextjs-original colored text-5xl"></i>
+              <p class="text-sm text-gray-300">Next.js</p>
+            </div>
+            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
+              <i class="devicon-nodejs-plain colored text-5xl"></i>
+              <p class="text-sm text-gray-300">Node.js</p>
             </div>
             <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
               <i class="devicon-react-original colored text-5xl"></i>
               <p class="text-sm text-gray-300">React</p>
             </div>
       
-            <!-- Backend -->
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-nodejs-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">Node.js</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-express-original colored text-5xl"></i>
-              <p class="text-sm text-gray-300">Express.js</p>
-            </div>
+            <!-- Backend/Data -->
             <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
               <i class="devicon-postgresql-plain colored text-5xl"></i>
               <p class="text-sm text-gray-300">PostgreSQL</p>
             </div>
             <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-firebase-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">Firebase</p>
+              <i class="devicon-mongodb-plain colored text-5xl"></i>
+              <p class="text-sm text-gray-300">MongoDB</p>
+            </div>
+            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
+              <i class="devicon-rust-plain colored text-5xl"></i>
+              <p class="text-sm text-gray-300">Rust</p>
             </div>
           </div>
         </div>
@@ -165,27 +167,206 @@
           <p class="text-gray-400 text-lg max-w-2xl mx-auto">Here are some of my projects that showcase my skills and passion.</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Project 1 -->
           <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden">
+            <div class="h-48 bg-gray-800 flex items-center justify-center">
+              <span class="text-4xl text-gray-600">🏸</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">Capybara's Dashboard</h3>
+              <p class="text-gray-400 mb-4 text-sm leading-relaxed">Badminton management dashboard built for my badminton club to easily track and manage matches.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Next.js</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">PostgreSQL</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://capybara-dashboard.vercel.app/" target="_blank" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
+                <a href="https://github.com/fernandwill/capybara-dashboard" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden">
+            <div class="h-48 bg-gray-800 flex items-center justify-center">
+              <span class="text-4xl text-gray-600">🦀</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">Rustcord</h3>
+              <p class="text-gray-400 mb-4 text-sm leading-relaxed">A Discord-like chat application built with Rust for the backend and React for the frontend, featuring real-time messaging and secure WebSocket connections.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">React</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Rust</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://rustcord.pages.dev/" target="_blank" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
+                <a href="https://github.com/fernandwill/rust-chat" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden">
+            <div class="h-48 bg-gray-800 flex items-center justify-center">
+              <span class="text-4xl text-gray-600">🌀</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">MyTorrent</h3>
+              <p class="text-gray-400 mb-4 text-sm leading-relaxed">A BitTorrent client with React frontend and Node.js backend, allowing users to download and share files through the BitTorrent protocol.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">React</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Node.js</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Express</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="#" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
+                <a href="https://github.com/fernandwill/mytorrent" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 - Hidden by default -->
+          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden hidden-project hidden">
+            <div class="h-48 bg-gray-800 flex items-center justify-center">
+              <span class="text-4xl text-gray-600">🧘</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">Mantra Tracker</h3>
+              <p class="text-gray-400 mb-4 text-sm leading-relaxed">A habit and mantra tracking application with analytics dashboard to monitor personal growth and mindfulness practices.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Next.js</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">TypeScript</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">PostgreSQL</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://mantra-tracker.vercel.app/" target="_blank" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
+                <a href="https://github.com/fernandwill/mantra-tracker-frontend" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 - Hidden by default -->
+          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden hidden-project hidden">
             <div class="h-48 bg-gray-800 flex items-center justify-center">
               <span class="text-4xl text-gray-600">👤</span>
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">AI Virtual Counselor</h3>
-              <p class="text-gray-400 mb-4 text-sm leading-relaxed">An AI-powered virtual counselor built with a handcrafted LLM, designed to provide accessible and empathic counseling for students.</p>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">JobSphere</h3>
+              <p class="text-gray-400 mb-4 text-sm leading-relaxed">TBD.</p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Python</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">AI/ML</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">NLP</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">TBD</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">TBD</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">TBD</span>
               </div>
               <div class="flex gap-3">
-                <a href="#" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">View Demo</a>
+                <a href="#" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
                 <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
               </div>
             </div>
           </div>
+
+          <!-- Project 6 - Hidden by default -->
+          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden hidden-project hidden">
+            <div class="h-48 bg-gray-800 flex items-center justify-center">
+              <span class="text-4xl text-gray-600">✈️</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">Planespotting App</h3>
+              <p class="text-gray-400 mb-4 text-sm leading-relaxed">An application for aviation enthusiasts to track and log aircraft sightings with detailed information and images.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">React</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Express</span>
+                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">PostgreSQL</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="#" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
+                <a href="https://github.com/fernandwill/planespotting-app" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="text-center mt-12">
-          <a href="#" class="inline-block bg-accent text-black px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors">View All Projects</a>
+          <button id="toggle-projects" class="inline-block bg-accent text-black px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors">Show More Projects</button>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('toggle-projects');
+      const projects = document.querySelectorAll('.project-card');
+  
+      let isExpanded = false;
+      const visibleCount = 3; // Number of visible projects by default
+  
+      function toggleProjects() {
+        if (isExpanded) {
+          // Hide projects
+          for (let i = visibleCount; i < projects.length; i++) {
+            projects[i].classList.add('hidden');
+          }
+          toggleButton.textContent = 'Show Less Projects';
+        } else {
+          // Show projects
+          projects.forEach(project => project.classList.remove('hidden'));
+          toggleButton.textContent = 'Show More Projects';
+        }
+        isExpanded = !isExpanded;
+      }
+  
+      toggleButton.addEventListener('click', toggleProjects);
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('toggle-projects');
+      const projects = document.querySelectorAll('.project-card');
+  
+      let isExpanded = false;
+      const visibleCount = 3; // Number of visible projects by default
+  
+      function toggleProjects() {
+        if (isExpanded) {
+          // Hide projects
+          for (let i = visibleCount; i < projects.length; i++) {
+            projects[i].classList.add('hidden');
+          }
+          toggleButton.textContent = 'Show Less Projects';
+        } else {
+          // Show projects
+          projects.forEach(project => project.classList.remove('hidden'));
+          toggleButton.textContent = 'Show More Projects';
+        }
+        isExpanded = !isExpanded;
+      }
+  
+      toggleButton.addEventListener('click', toggleProjects);
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleButton = document.getElementById('toggle-projects');
+      const projects = document.querySelectorAll('.project-card');
+  
+      let isExpanded = false;
+      const visibleCount = 3; // Number of visible projects by default
+  
+      function toggleProjects() {
+        if (isExpanded) {
+          // Hide projects
+          for (let i = visibleCount; i < projects.length; i++) {
+            projects[i].classList.add('hidden');
+          }
+          toggleButton.textContent = 'Show Less Projects';
+        } else {
+          // Show projects
+          projects.forEach(project => project.classList.remove('hidden'));
+          toggleButton.textContent = 'Show More Projects';
+        }
+        isExpanded = !isExpanded;
+      }
+  
+      toggleButton.addEventListener('click', toggleProjects);
+    });
+  </script>
         </div>
       </div>
     </section>
