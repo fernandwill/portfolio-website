@@ -22,26 +22,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("animate-fade-in-up");
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const sections = document.querySelectorAll("section:not(#home)");
-    sections.forEach(section => {
-        const elements = section.querySelectorAll("h2, h3, p, div, span");
+    document.querySelectorAll("section").forEach(section => {
+        const elements = section.querySelectorAll("h1, h2, h3, p, div, span, article, button");
         elements.forEach(el => {
-            el.classList.add("opacity-0");
+            el.classList.add("fade-in");
             observer.observe(el);
         });
     });
 
     // Cursor-following gradient effect
-    const gradientText = document.getElementById("gradient-name");
+    const gradientText = document.querySelector(".hero-title span");
     if (gradientText) {
-        gradientText.style.backgroundImage = `linear-gradient(90deg, #22c55e, #ec4899, #3b82f6)`;
-        gradientText.style.backgroundSize = "200% 200%";
-        gradientText.style.transition = "background-image 0.3s ease";
+        const goldStops = ["#f9e79f", "#d4af37", "#b68b2e"];
+        gradientText.style.backgroundImage = `linear-gradient(90deg, ${goldStops.join(", ")})`;
+        gradientText.style.backgroundSize = "220% 220%";
+        gradientText.style.transition = "background-image 0.4s ease";
 
         document.addEventListener("mousemove", (e) => {
             const { clientX, clientY } = e;
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const y = clientY - innerHeight / 2;
             const angle = Math.atan2(y, x) * (180 / Math.PI);
 
-            gradientText.style.backgroundImage = `linear-gradient(${angle + 90}deg, #22c55e, #ec4899, #3b82f6)`;
+            gradientText.style.backgroundImage = `linear-gradient(${angle + 90}deg, ${goldStops.join(", ")})`;
         });
     }
 
@@ -67,10 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             
             // Update button text
-            if (toggleButton.textContent === "Show More Projects") {
-                toggleButton.textContent = "Show Less Projects";
+            if (toggleButton.textContent.trim().startsWith("Show More")) {
+                toggleButton.innerHTML = `Show Less Projects <i class="fa-solid fa-minus text-xs"></i>`;
             } else {
-                toggleButton.textContent = "Show More Projects";
+                toggleButton.innerHTML = `Show More Projects <i class="fa-solid fa-plus text-xs"></i>`;
             }
         });
     }
