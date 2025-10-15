@@ -35,10 +35,34 @@
   </script>
   <style>
     body {
+      position: relative;
       background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.1), transparent 45%),
                   radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.08), transparent 50%),
                   #030303;
       min-height: 100vh;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .background-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(circle at top left, rgba(6, 6, 6, 0.6), rgba(3, 3, 3, 0.85)),
+                  radial-gradient(circle at bottom right, rgba(27, 27, 27, 0.6), rgba(3, 3, 3, 0.85));
+      z-index: -1;
     }
 
     .hero-title span {
@@ -72,19 +96,23 @@
   </style>
 </head>
 <body class="bg-primary text-white antialiased">
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="ui/bg.mp4" type="video/mp4" />
+  </video>
+  <div class="background-overlay"></div>
   <div class="relative min-h-screen overflow-hidden">
     <header class="sticky top-0 z-30">
       <div class="backdrop-blur-14 bg-primary/90 border-b border-white/5">
         <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
           <div class="flex items-center space-x-2 text-sm uppercase tracking-[0.3em] text-white/60">
             <span class="h-2 w-2 rounded-full bg-accent"></span>
-            <span>MY PORTFOLIO</span>
+            <span>WELCOME, STRANGER!</span>
           </div>
           <nav class="hidden items-center gap-8 text-sm text-white/60 md:flex">
-            <a href="#about" class="transition hover:text-white">About</a>
-            <a href="#experience" class="transition hover:text-white">Experience</a>
-            <a href="#projects" class="transition hover:text-white">Projects</a>
-            <a href="#contact" class="transition hover:text-white">Contact</a>
+            <a href="#about" class="transition hover:text-white">ABOUT</a>
+            <a href="#experience" class="transition hover:text-white">EXPERIENCE</a>
+            <a href="#projects" class="transition hover:text-white">PROJECTS</a>
+            <a href="#contact" class="transition hover:text-white">CONTACT</a>
           </nav>
         </div>
       </div>
@@ -116,19 +144,19 @@
         <div class="space-y-6 rounded-3xl border border-white/5 bg-secondary/60 p-8 shadow-glow">
           <div class="flex items-center justify-between text-sm text-white/60">
             <span>Current location</span>
-            <span class="font-medium text-white">Jakarta, ID</span>
+            <span class="font-medium text-white">Indonesia</span>
           </div>
           <div class="flex items-center justify-between text-sm text-white/60">
             <span>Focus</span>
-            <span class="font-medium text-white">Full-stack engineering</span>
+            <span class="font-medium text-white">Engineering stuff</span>
           </div>
           <div class="flex items-center justify-between text-sm text-white/60">
             <span>Currently</span>
-            <span class="font-medium text-white">Exploring AI UX</span>
+            <span class="font-medium text-white">Exploring better UX and prompting</span>
           </div>
           <div class="flex items-center justify-between text-sm text-white/60">
             <span>Timezone</span>
-            <span class="font-medium text-white">GMT+7</span>
+            <span class="font-medium text-white">GMT +07.00</span>
           </div>
         </div>
       </section>
@@ -141,8 +169,8 @@
         </div>
         <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <p class="text-lg leading-relaxed text-white/70">
-            I'm Fernand, a 25-year-old developer obsessed with crafting systems that feel alive. From multiplayer dashboards to
-            AI-assisted workflows, I enjoy building with intentionality, delight, and a healthy disregard for impossible briefs.
+            I'm Fernand, a 25-year-old developer obsessed with crafting systems that feel alive. From simple dashboards to
+            AI-assisted workflows, I enjoy building with intentionality, delight, and a healthy regard for security.
             My toolkit spans modern JavaScript ecosystems, data-heavy backends, and emergent experiments with language models.
           </p>
           <div class="space-y-4 rounded-3xl border border-white/5 bg-tertiary/70 p-8">
@@ -242,10 +270,10 @@
               </div>
             </div>
             <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
-              <a href="https://rustcord.pages.dev/" target="_blank" class="inline-flex items-center gap-2 hover:text-white">
+              <span class="inline-flex items-center gap-2 text-accent/70 cursor-not-allowed select-none" aria-disabled="true">
                 This project is not deployed
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
+                <i class="fa-solid fa-ban text-xs"></i>
+              </span>
               <a href="https://github.com/fernandwill/rustcord" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
                 GitHub
                 <i class="fa-brands fa-github"></i>
@@ -270,10 +298,10 @@
               </div>
             </div>
             <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
-              <a href="#" class="inline-flex items-center gap-2 hover:text-white">
+              <span class="inline-flex items-center gap-2 text-accent/70 cursor-not-allowed select-none" aria-disabled="true">
                 This project is not deployed
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
+                <i class="fa-solid fa-ban text-xs"></i>
+              </span>
               <a href="https://github.com/fernandwill/mytorrent" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
                 GitHub
                 <i class="fa-brands fa-github"></i>
@@ -324,10 +352,10 @@
               </div>
             </div>
             <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
-              <a href="#" class="inline-flex items-center gap-2 hover:text-white">
+              <span class="inline-flex items-center gap-2 text-accent/70 cursor-not-allowed select-none" aria-disabled="true">
                 This project is not deployed
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
+                <i class="fa-solid fa-ban text-xs"></i>
+              </span>
               <a href="https://github.com/fernandwill/aspyre" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
                 GitHub
                 <i class="fa-brands fa-github"></i>
@@ -352,11 +380,38 @@
               </div>
             </div>
             <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
-              <a href="#" class="inline-flex items-center gap-2 hover:text-white">
+              <span class="inline-flex items-center gap-2 text-accent/70 cursor-not-allowed select-none" aria-disabled="true">
                 This project is not deployed
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
+                <i class="fa-solid fa-ban text-xs"></i>
+              </span>
               <a href="https://github.com/fernandwill/planespotting-app" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+                GitHub
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="group hidden-project hidden flex flex-col justify-between rounded-3xl border border-white/5 bg-tertiary/80 p-8 shadow-glow transition hover:border-accent/50 hover:shadow-[0_0_50px_rgba(212,175,55,0.18)]">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/40">
+                <span>07</span>
+                <span>WEB3 (SOLANA)</span>
+              </div>
+              <h3 class="text-2xl font-semibold text-white transition group-hover:text-accent">Autenix</h3>
+              <p class="text-white/60">
+                Blockchain notarization platform that secures documents on-chain with a sleek React interface. Built on Solana to satisfy hackathon requirements.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.3em] text-accent">
+                <span class="rounded-full border border-accent/30 px-3 py-1">React.js</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">Gill</span>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
+              <span class="inline-flex items-center gap-2 text-accent/70 cursor-not-allowed select-none" aria-disabled="true">
+                This project is not deployed
+                <i class="fa-solid fa-ban text-xs"></i>
+              </span>
+              <a href="#" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
                 GitHub
                 <i class="fa-brands fa-github"></i>
               </a>
