@@ -2,382 +2,416 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fernand William Citra — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            sans: ["Manrope", "ui-sans-serif", "system-ui"],
+          },
           colors: {
-            primary: "#0a0a0a",
-            secondary: "#1a1a1a",
-            accent: "#00ff88",
+            primary: "#060606",
+            secondary: "#101010",
+            tertiary: "#1b1b1b",
+            accent: "#d4af37",
           },
-          animation: {
-            "fade-in-up": "fadeInUp 0.8s ease-out forwards",
-            "fade-in-left": "fadeInLeft 0.8s ease-out forwards",
-            "fade-in-right": "fadeInRight 0.8s ease-out forwards",
+          boxShadow: {
+            glow: "0 0 40px rgba(212, 175, 55, 0.15)",
           },
-          keyframes: {
-              fadeInUp: {
-                  "0%": { opacity: "0", transform: "translateY(30px)" },
-                  "100%": { opacity: "1", transform: "translateY(0)" }
-              },
-              fadeInLeft: {
-                  "0%": { opacity: "0", transform: "translateX(-30px)" },
-                  "100%": { opacity: "1", transform: "translateX(0)" }
-              },
-              fadeInRight: {
-                  "0%": { opacity: "0", transform: "translateX(30px)" },
-                  "100%": { opacity: "1", transform: "translateX(0)" }
-              },
-              gradient: {
-                  "0%": { backgroundPosition: "0% 50%" },
-                  "50%": { backgroundPosition: "100% 50%" },
-                  "100%": { backgroundPosition: "0% 50%" }
-              }
-          }
-        }
-      }
-    }
+          backdropBlur: {
+            14: "14px",
+          },
+        },
+      },
+    };
   </script>
   <style>
-    .animation-delay-200 {animation-delay: 0.2s;}
-    .animation-delay-400 {animation-delay: 0.4s;}
-    .animation-delay-600 {animation-delay: 0.6s;}
-    .animation-delay-800 {animation-delay: 0.8s;}
-    .animation-delay-1000 {animation-delay: 1s;}
-
-    .animate-fade-in-up,
-    .animate-fade-in-left,
-    .animate-fade-in-right {
-      opacity: 0;
+    body {
+      background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.1), transparent 45%),
+                  radial-gradient(circle at bottom right, rgba(212, 175, 55, 0.08), transparent 50%),
+                  #030303;
+      min-height: 100vh;
     }
 
-    #gradient-name {
-        background-size: 200% 200%;
+    .hero-title span {
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+      animation: gradient-sheen 12s ease-in-out infinite;
+    }
+
+    @keyframes gradient-sheen {
+      0% {
         background-position: 0% 50%;
-        animation: gradient 5s ease-in-out infinite;
-    }
-    
-    .hidden {
-      display: none;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
-<body class="bg-primary text-white">
-  <main class="pt-16">
-    <section id="home" class="min-h-screen flex items-center justify-center px-4">
-      <div class="text-center max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Hi, I'm <span id="gradient-name"
-            class="bg-clip-text text-transparent font-bold"
-            style="background-image: linear-gradient(90deg, #22c55e, #ec4899, #3b82f6); background-size: 200% 200%;">
-            Fernand William Citra
-          </span></h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-6 animate-fade-in-up animation-delay-300">Aspiring Fullstack Developer</p>
-        <p class="text-lg text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">You can find me in:</p>
-
-        <div class="flex justify-center items-center space-x-4 mb-8 animate-fade-in-up animation-delay-600">
-          <a href="https://github.com/fernandwill" target="_blank" class="text-2xl text-gray-400 hover:text-accent transition-colors">
-            <i class="fab fa-github text-xl"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/fernandwill/" target="_blank" class="text-2xl text-gray-400 hover:text-accent transition-colors">
-            <i class="fab fa-linkedin text-xl"></i>
-          </a>
-          <a href="mailto:fernandwilliam23@gmail.com" target="_blank" class="text-2xl text-gray-400 hover:text-accent transition-colors">
-            <i class="fas fa-envelope text-xl"></i>
+<body class="bg-primary text-white antialiased">
+  <div class="relative min-h-screen overflow-hidden">
+    <header class="sticky top-0 z-30">
+      <div class="backdrop-blur-14 bg-primary/90 border-b border-white/5">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+          <div class="flex items-center space-x-2 text-sm uppercase tracking-[0.3em] text-white/60">
+            <span class="h-2 w-2 rounded-full bg-accent"></span>
+            <span>Fernand William Citra</span>
+          </div>
+          <nav class="hidden items-center gap-8 text-sm text-white/60 md:flex">
+            <a href="#about" class="transition hover:text-white">About</a>
+            <a href="#experience" class="transition hover:text-white">Experience</a>
+            <a href="#projects" class="transition hover:text-white">Projects</a>
+            <a href="#contact" class="transition hover:text-white">Contact</a>
+          </nav>
+          <a href="mailto:fernandwilliam23@gmail.com" class="group inline-flex items-center gap-2 rounded-full border border-accent/60 px-4 py-2 text-sm font-medium text-accent transition hover:bg-accent hover:text-black">
+            <span class="h-2 w-2 rounded-full bg-accent shadow-glow transition group-hover:bg-black"></span>
+            <span>Let's talk</span>
           </a>
         </div>
+      </div>
+    </header>
 
-        <div class="flex items-center justify-center space-x-3 mb-8 animate-fade-in-up animation-delay-800">
-          <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
-            <span class="text-accent text-sm"><i class="fa-solid fa-location-dot"></i></span>
-          </div>
-          <div>
-            <p class="text-gray-400">Indonesia</p>
+    <main class="mx-auto flex max-w-6xl flex-col gap-32 px-6 pb-24 pt-16">
+      <section id="home" class="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:items-center">
+        <div class="space-y-10">
+          <p class="text-xs uppercase tracking-[0.5em] text-white/40">Available for full-time roles</p>
+          <h1 class="hero-title text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.8rem]">
+            Crafting immersive digital experiences with precision, empathy, and a hint of mischief.
+            <span class="mt-4 block bg-gradient-to-r from-[#f9e79f] via-[#d4af37] to-[#b68b2e] bg-clip-text text-transparent">Fernand William Citra</span>
+          </h1>
+          <p class="max-w-2xl text-lg text-white/60">
+            I'm a full-stack developer blending creative storytelling with technical rigor. Inspired by cinematic interfaces
+            and playful art direction, I engineer products that feel as good as they look.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#projects" class="inline-flex items-center gap-3 rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black shadow-glow transition hover:-translate-y-0.5 hover:bg-[#f3d76a]">
+              View Work
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="https://github.com/fernandwill" target="_blank" class="inline-flex items-center gap-3 rounded-full border border-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white/70 transition hover:border-accent hover:text-accent">
+              GitHub
+              <i class="fa-brands fa-github text-base"></i>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="py-20 px-4 flex items-center justify-center">
-      <div class="max-w-6xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">About Me</h2>
-          <p class="text-gray-300 mb-6 text-lg leading-relaxed text-center">I'm a 25-year-old who just found my... Uhh... What did they always say? Pidgeon? Pay-shion? No, no, no, I got my own knack for technology and software development. I'm currently focused on Full Stack Development, and I've developed some experience on JavaScript, its framework, and some backend mumbo jumbo. From building web applications to working with LLM to further confuse myself, I <s>do not</s> enjoy exploring both software and hardware aspects of technology. I'm constantly exploring, learning, and challenging myself with new projects that I can think of. Who knows what I can build one day.</p>
-      </div>
-    </section>
-
-    <section id="stack" class="py-20 px-4 bg-primary">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Tech Stacks</h2>
-            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-              Technologies I'm comfortable with across frontend and backend.
-            </p>
+        <div class="space-y-6 rounded-3xl border border-white/5 bg-secondary/60 p-8 shadow-glow">
+          <div class="flex items-center justify-between text-sm text-white/60">
+            <span>Current location</span>
+            <span class="font-medium text-white">Jakarta, ID</span>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <!-- Frontend -->
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-javascript-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">JavaScript</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-typescript-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">TypeScript</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-nextjs-original colored text-5xl"></i>
-              <p class="text-sm text-gray-300">Next.js</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-nodejs-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">Node.js</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-react-original colored text-5xl"></i>
-              <p class="text-sm text-gray-300">React</p>
-            </div>
-      
-            <!-- Backend/Data -->
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-postgresql-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">PostgreSQL</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-mongodb-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">MongoDB</p>
-            </div>
-            <div class="bg-secondary p-6 rounded-lg border border-gray-800 flex flex-col items-center space-y-4">
-              <i class="devicon-rust-plain colored text-5xl"></i>
-              <p class="text-sm text-gray-300">Rust</p>
-            </div>
+          <div class="flex items-center justify-between text-sm text-white/60">
+            <span>Focus</span>
+            <span class="font-medium text-white">Full-stack engineering</span>
+          </div>
+          <div class="flex items-center justify-between text-sm text-white/60">
+            <span>Currently</span>
+            <span class="font-medium text-white">Exploring AI UX</span>
+          </div>
+          <div class="flex items-center justify-between text-sm text-white/60">
+            <span>Timezone</span>
+            <span class="font-medium text-white">GMT+7</span>
           </div>
         </div>
       </section>
-          
 
-    <section id="projects" class="py-20 px-4 bg-secondary/30">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <p class="text-gray-400 text-lg max-w-2xl mx-auto">Here are some of my projects that showcase my skills and passion.</p>
+      <section id="about" class="space-y-10">
+        <div class="flex items-center gap-6">
+          <span class="h-px flex-1 bg-gradient-to-r from-accent/60 to-transparent"></span>
+          <p class="text-xs uppercase tracking-[0.5em] text-white/40">About</p>
+          <span class="h-px flex-1 bg-gradient-to-l from-accent/60 to-transparent"></span>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          <!-- Project 1 -->
-          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden">
-            <div class="h-48 bg-gray-800 flex items-center justify-center">
-              <span class="text-4xl text-gray-600">🏸</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">Capybara's Dashboard</h3>
-              <p class="text-gray-400 mb-4 text-sm leading-relaxed">Badminton management dashboard built for my badminton club to easily track and manage matches.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Next.js</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">PostgreSQL</span>
-              </div>
-              <div class="flex gap-3">
-                <a href="https://capybara-dashboard.vercel.app/" target="_blank" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
-                <a href="https://github.com/fernandwill/capybara-dashboard" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden">
-            <div class="h-48 bg-gray-800 flex items-center justify-center">
-              <span class="text-4xl text-gray-600">🦀</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">Rustcord</h3>
-              <p class="text-gray-400 mb-4 text-sm leading-relaxed">A Discord-like chat application built with Rust for the backend and React for the frontend, featuring real-time messaging and secure WebSocket connections.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">React</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Rust</span>
-              </div>
-              <div class="flex gap-3">
-                <a href="https://rustcord.pages.dev/" target="_blank" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
-                <a href="https://github.com/fernandwill/rust-chat" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden">
-            <div class="h-48 bg-gray-800 flex items-center justify-center">
-              <span class="text-4xl text-gray-600">🌀</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">MyTorrent</h3>
-              <p class="text-gray-400 mb-4 text-sm leading-relaxed">A BitTorrent client with React frontend and Node.js backend, allowing users to download and share files through the BitTorrent protocol.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">React</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Node.js</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Express</span>
-              </div>
-              <div class="flex gap-3">
-                <a href="#" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
-                <a href="https://github.com/fernandwill/mytorrent" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 - Hidden by default -->
-          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden hidden-project hidden">
-            <div class="h-48 bg-gray-800 flex items-center justify-center">
-              <span class="text-4xl text-gray-600">🧘</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">Mantra Tracker</h3>
-              <p class="text-gray-400 mb-4 text-sm leading-relaxed">A habit and mantra tracking application with analytics dashboard to monitor personal growth and mindfulness practices.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Next.js</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">TypeScript</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">PostgreSQL</span>
-              </div>
-              <div class="flex gap-3">
-                <a href="https://mantra-tracker.vercel.app/" target="_blank" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
-                <a href="https://github.com/fernandwill/mantra-tracker-frontend" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 - Hidden by default -->
-          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden hidden-project hidden">
-            <div class="h-48 bg-gray-800 flex items-center justify-center">
-              <span class="text-4xl text-gray-600">👤</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">JobSphere</h3>
-              <p class="text-gray-400 mb-4 text-sm leading-relaxed">TBD.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">TBD</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">TBD</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">TBD</span>
-              </div>
-              <div class="flex gap-3">
-                <a href="#" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6 - Hidden by default -->
-          <div class="bg-secondary border border-gray-800 rounded-lg overflow-hidden hidden-project hidden">
-            <div class="h-48 bg-gray-800 flex items-center justify-center">
-              <span class="text-4xl text-gray-600">✈️</span>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition-colors">Planespotting App</h3>
-              <p class="text-gray-400 mb-4 text-sm leading-relaxed">An application for aviation enthusiasts to track and log aircraft sightings with detailed information and images.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">React</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">Express</span>
-                <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">PostgreSQL</span>
-              </div>
-              <div class="flex gap-3">
-                <a href="#" class="text-accent hover:text-accent/80 transition-colors text-sm font-medium">Visit Project</a>
-                <a href="https://github.com/fernandwill/planespotting-app" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Visit GitHub</a>
-              </div>
-            </div>
+        <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+          <p class="text-lg leading-relaxed text-white/70">
+            I'm Fernand, a 25-year-old developer obsessed with crafting systems that feel alive. From multiplayer dashboards to
+            AI-assisted workflows, I enjoy building with intentionality, delight, and a healthy disregard for impossible briefs.
+            My toolkit spans modern JavaScript ecosystems, data-heavy backends, and emergent experiments with language models.
+          </p>
+          <div class="space-y-4 rounded-3xl border border-white/5 bg-tertiary/70 p-8">
+            <h3 class="text-sm uppercase tracking-[0.3em] text-accent">Values</h3>
+            <ul class="space-y-3 text-sm text-white/60">
+              <li class="flex items-center gap-3"><span class="text-accent">▹</span> Thoughtful interactions over feature bloat</li>
+              <li class="flex items-center gap-3"><span class="text-accent">▹</span> Collaborative making beats siloed building</li>
+              <li class="flex items-center gap-3"><span class="text-accent">▹</span> Humor as essential UX</li>
+            </ul>
           </div>
         </div>
+      </section>
 
-        <div class="text-center mt-12">
-          <button id="toggle-projects" class="inline-block bg-accent text-black px-8 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors">Show More Projects</button>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleButton = document.getElementById('toggle-projects');
-      const projects = document.querySelectorAll('.project-card');
-  
-      let isExpanded = false;
-      const visibleCount = 3; // Number of visible projects by default
-  
-      function toggleProjects() {
-        if (isExpanded) {
-          // Hide projects
-          for (let i = visibleCount; i < projects.length; i++) {
-            projects[i].classList.add('hidden');
-          }
-          toggleButton.textContent = 'Show Less Projects';
-        } else {
-          // Show projects
-          projects.forEach(project => project.classList.remove('hidden'));
-          toggleButton.textContent = 'Show More Projects';
-        }
-        isExpanded = !isExpanded;
-      }
-  
-      toggleButton.addEventListener('click', toggleProjects);
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleButton = document.getElementById('toggle-projects');
-      const projects = document.querySelectorAll('.project-card');
-  
-      let isExpanded = false;
-      const visibleCount = 3; // Number of visible projects by default
-  
-      function toggleProjects() {
-        if (isExpanded) {
-          // Hide projects
-          for (let i = visibleCount; i < projects.length; i++) {
-            projects[i].classList.add('hidden');
-          }
-          toggleButton.textContent = 'Show Less Projects';
-        } else {
-          // Show projects
-          projects.forEach(project => project.classList.remove('hidden'));
-          toggleButton.textContent = 'Show More Projects';
-        }
-        isExpanded = !isExpanded;
-      }
-  
-      toggleButton.addEventListener('click', toggleProjects);
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleButton = document.getElementById('toggle-projects');
-      const projects = document.querySelectorAll('.project-card');
-  
-      let isExpanded = false;
-      const visibleCount = 3; // Number of visible projects by default
-  
-      function toggleProjects() {
-        if (isExpanded) {
-          // Hide projects
-          for (let i = visibleCount; i < projects.length; i++) {
-            projects[i].classList.add('hidden');
-          }
-          toggleButton.textContent = 'Show Less Projects';
-        } else {
-          // Show projects
-          projects.forEach(project => project.classList.remove('hidden'));
-          toggleButton.textContent = 'Show More Projects';
-        }
-        isExpanded = !isExpanded;
-      }
-  
-      toggleButton.addEventListener('click', toggleProjects);
-    });
-  </script>
+      <section id="experience" class="space-y-12">
+        <div class="flex items-center gap-6">
+          <span class="h-px flex-1 bg-gradient-to-r from-accent/60 to-transparent"></span>
+          <p class="text-xs uppercase tracking-[0.5em] text-white/40">Experience</p>
+          <span class="h-px flex-1 bg-gradient-to-l from-accent/60 to-transparent"></span>
         </div>
+        <div class="grid gap-6">
+          <article class="rounded-3xl border border-white/5 bg-secondary/70 p-8 shadow-glow transition hover:border-accent/40 hover:shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 class="text-2xl font-semibold text-white">Freelance Creative Technologist</h3>
+                <p class="text-sm uppercase tracking-[0.3em] text-accent">2022 — Present</p>
+              </div>
+              <div class="max-w-xl text-white/60">
+                Build experimental digital experiences for indie clients — blending storytelling with realtime interactivity and
+                bespoke CMS workflows.
+              </div>
+            </div>
+          </article>
+          <article class="rounded-3xl border border-white/5 bg-secondary/70 p-8 shadow-glow transition hover:border-accent/40 hover:shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 class="text-2xl font-semibold text-white">Community Projects Lead — Capybara Club</h3>
+                <p class="text-sm uppercase tracking-[0.3em] text-accent">2020 — 2022</p>
+              </div>
+              <div class="max-w-xl text-white/60">
+                Led product design and development for the club's scheduling platform, increasing engagement by shipping playful
+                features rooted in community rituals.
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="space-y-12">
+        <div class="flex items-center gap-6">
+          <span class="h-px flex-1 bg-gradient-to-r from-accent/60 to-transparent"></span>
+          <p class="text-xs uppercase tracking-[0.5em] text-white/40">Selected Work</p>
+          <span class="h-px flex-1 bg-gradient-to-l from-accent/60 to-transparent"></span>
+        </div>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <article class="group flex flex-col justify-between rounded-3xl border border-white/5 bg-tertiary/80 p-8 shadow-glow transition hover:border-accent/50 hover:shadow-[0_0_50px_rgba(212,175,55,0.18)]">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/40">
+                <span>01</span>
+                <span>Dashboard</span>
+              </div>
+              <h3 class="text-2xl font-semibold text-white transition group-hover:text-accent">Capybara's Dashboard</h3>
+              <p class="text-white/60">
+                Club-wide operation suite for scheduling, analytics, and logistics. Features realtime game rotations, attendance
+                insights, and playful avatars.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.3em] text-accent">
+                <span class="rounded-full border border-accent/30 px-3 py-1">Next.js</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
+              <a href="https://capybara-dashboard.vercel.app/" target="_blank" class="inline-flex items-center gap-2 hover:text-white">
+                Visit project
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+              <a href="https://github.com/fernandwill/capybara-dashboard" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+                GitHub
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col justify-between rounded-3xl border border-white/5 bg-tertiary/80 p-8 shadow-glow transition hover:border-accent/50 hover:shadow-[0_0_50px_rgba(212,175,55,0.18)]">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/40">
+                <span>02</span>
+                <span>Communication</span>
+              </div>
+              <h3 class="text-2xl font-semibold text-white transition group-hover:text-accent">Rustcord</h3>
+              <p class="text-white/60">
+                Real-time chat playground with Rust websockets, typed contracts, and a cinematic interface that feels like a sci-fi bridge.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.3em] text-accent">
+                <span class="rounded-full border border-accent/30 px-3 py-1">React</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">Rust</span>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
+              <a href="https://rustcord.pages.dev/" target="_blank" class="inline-flex items-center gap-2 hover:text-white">
+                Visit project
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+              <a href="https://github.com/fernandwill/rust-chat" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+                GitHub
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="group hidden-project hidden flex flex-col justify-between rounded-3xl border border-white/5 bg-tertiary/80 p-8 shadow-glow transition hover:border-accent/50 hover:shadow-[0_0_50px_rgba(212,175,55,0.18)]">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/40">
+                <span>03</span>
+                <span>Peer-to-peer</span>
+              </div>
+              <h3 class="text-2xl font-semibold text-white transition group-hover:text-accent">MyTorrent</h3>
+              <p class="text-white/60">
+                BitTorrent client with a cinematic UI, purposeful micro-animations, and Node services orchestrating torrent sessions.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.3em] text-accent">
+                <span class="rounded-full border border-accent/30 px-3 py-1">React</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">Node.js</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">Express</span>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
+              <a href="#" class="inline-flex items-center gap-2 hover:text-white">
+                Visit project
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+              <a href="https://github.com/fernandwill/mytorrent" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+                GitHub
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="group hidden-project hidden flex flex-col justify-between rounded-3xl border border-white/5 bg-tertiary/80 p-8 shadow-glow transition hover:border-accent/50 hover:shadow-[0_0_50px_rgba(212,175,55,0.18)]">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/40">
+                <span>04</span>
+                <span>Wellness</span>
+              </div>
+              <h3 class="text-2xl font-semibold text-white transition group-hover:text-accent">Mantra Tracker</h3>
+              <p class="text-white/60">
+                Mindfulness companion blending daily rituals, mood tracking, and a calming analytics dashboard built with Next.js.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.3em] text-accent">
+                <span class="rounded-full border border-accent/30 px-3 py-1">Next.js</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">TypeScript</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
+              <a href="https://mantra-tracker.vercel.app/" target="_blank" class="inline-flex items-center gap-2 hover:text-white">
+                Visit project
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+              <a href="https://github.com/fernandwill/mantra-tracker-frontend" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+                GitHub
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="group hidden-project hidden flex flex-col justify-between rounded-3xl border border-white/5 bg-tertiary/80 p-8 shadow-glow transition hover:border-accent/50 hover:shadow-[0_0_50px_rgba(212,175,55,0.18)]">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/40">
+                <span>05</span>
+                <span>Careers</span>
+              </div>
+              <h3 class="text-2xl font-semibold text-white transition group-hover:text-accent">JobSphere</h3>
+              <p class="text-white/60">
+                An ongoing experiment to rethink job discovery with human-first matching, narrative portfolios, and golden-thread storytelling.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.3em] text-accent">
+                <span class="rounded-full border border-accent/30 px-3 py-1">TypeScript</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">Next.js</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
+              <a href="#" class="inline-flex items-center gap-2 hover:text-white">
+                Visit project
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+              <a href="#" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+                GitHub
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="group hidden-project hidden flex flex-col justify-between rounded-3xl border border-white/5 bg-tertiary/80 p-8 shadow-glow transition hover:border-accent/50 hover:shadow-[0_0_50px_rgba(212,175,55,0.18)]">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/40">
+                <span>06</span>
+                <span>Aviation</span>
+              </div>
+              <h3 class="text-2xl font-semibold text-white transition group-hover:text-accent">Planespotting App</h3>
+              <p class="text-white/60">
+                Enthusiast toolkit for tracking aircraft sightings with location-aware tagging, offline caching, and shareable flight stories.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.3em] text-accent">
+                <span class="rounded-full border border-accent/30 px-3 py-1">React</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">Express</span>
+                <span class="rounded-full border border-accent/30 px-3 py-1">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center gap-6 text-sm font-medium text-accent">
+              <a href="#" class="inline-flex items-center gap-2 hover:text-white">
+                Visit project
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+              <a href="https://github.com/fernandwill/planespotting-app" target="_blank" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+                GitHub
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+        <div class="flex justify-center">
+          <button id="toggle-projects" class="inline-flex items-center gap-3 rounded-full border border-accent/60 px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-accent transition hover:bg-accent hover:text-black">
+            Show More Projects
+            <i class="fa-solid fa-plus text-xs"></i>
+          </button>
+        </div>
+      </section>
+
+      <section id="contact" class="space-y-8">
+        <div class="flex items-center gap-6">
+          <span class="h-px flex-1 bg-gradient-to-r from-accent/60 to-transparent"></span>
+          <p class="text-xs uppercase tracking-[0.5em] text-white/40">Contact</p>
+          <span class="h-px flex-1 bg-gradient-to-l from-accent/60 to-transparent"></span>
+        </div>
+        <div class="rounded-3xl border border-white/5 bg-secondary/70 p-10 text-center shadow-glow">
+          <h2 class="text-3xl font-semibold text-white">Let's make something daring together.</h2>
+          <p class="mt-4 text-white/60">
+            I'm open to collaborations, full-time roles, and experiments that blur the lines between product, art, and community.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm uppercase tracking-[0.3em] text-white/60">
+            <a href="mailto:fernandwilliam23@gmail.com" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-3 transition hover:border-accent hover:text-accent">
+              <i class="fa-solid fa-envelope text-base"></i>
+              Email
+            </a>
+            <a href="https://www.linkedin.com/in/fernandwill/" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-3 transition hover:border-accent hover:text-accent">
+              <i class="fa-brands fa-linkedin text-base"></i>
+              LinkedIn
+            </a>
+            <a href="https://github.com/fernandwill" target="_blank" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-3 transition hover:border-accent hover:text-accent">
+              <i class="fa-brands fa-github text-base"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/5 py-10">
+      <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-center text-xs uppercase tracking-[0.4em] text-white/40 sm:flex-row sm:justify-between sm:text-left">
+        <span>© 2025 Fernand William Citra</span>
+        <span>Crafted with curiosity, tea, and golden glitches.</span>
       </div>
-    </section>
-  </main>
-
-  <footer class="bg-secondary border-t border-gray-800 py-8 px-4">
-    <div class="max-w-6xl mx-auto text-center">
-      <p class="text-gray-400">© 2025 Fernand William Citra</p>
-      <p class="text-gray-400">Built with pidgeon and lots of snacks, tea, a unicorn (it died), and brainrot content!</p>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script src="js/script.js"></script>
 </body>
